@@ -5,27 +5,22 @@ def isValid(s):
     Returns a string: either YES or NO
     '''
 
-    if len(s)==1:
-        return "YES"
+    if len(s) == 1: return "YES"
     
-    f_dict = {}
-    for letter in s:
-        if letter not in f_dict.keys():
-            f_dict[letter] = 1
-        else:
-            f_dict[letter] += 1
-            
-    f_arr = []
-    for letter in f_dict.keys():
-        f_arr.append(f_dict[letter])
-    f_arr.sort()
+    chars = set(s)
+    freqs = []
     
-    n = len(f_arr)
+    for char in chars:
+        charCount = list(s).count(char)
+        freqs.append(charCount)
     
-    if(f_arr[n-2]+1==f_arr[n-1] and f_arr[0]==f_arr[n-2]):
+    freqs.sort()
+    n = len(freqs)    
+    
+    if(freqs[n-2]+1==freqs[n-1] and freqs[0]==freqs[n-2]):
         return "YES"
-    if(f_arr[0]==f_arr[n-1]):
+    elif(freqs[0]==freqs[n-1]):
         return "YES"
-    if(f_arr[0]==1 and f_arr[1]==f_arr[n-1]):
+    elif(freqs[0]==1 and freqs[1]==freqs[n-1]):
         return "YES"
     return "NO"

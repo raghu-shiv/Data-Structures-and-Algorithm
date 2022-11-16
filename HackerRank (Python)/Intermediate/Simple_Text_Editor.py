@@ -18,10 +18,13 @@ for ops in range(Q):
   if q1 == '1':
     stack.append(S)
     S += q2
+
   elif q1 == '2':
     stack.append(S)    
     S = S[:-int(q2)]
+
   elif q1 == '3':
     print(S[int(q2)-1])
+    
   elif q1 == '4':
     S = stack.pop()

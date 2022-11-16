@@ -1,19 +1,19 @@
 def reverse(llist):
-  '''
-  Returns a SinglyLinkedListNode pointer: a reference to the head of the reversed list.
-  '''
+    '''
+    Returns a SinglyLinkedListNode pointer: a reference to the head of the reversed list.
+    '''
 
-  if(llist == None):
-    return None
-  elif(llist == 1):
-    return llist
+    head = llist
     
-  curNode = llist
-  prevNode = None
+    if head == None: return None
+    if head.next == None: return head
     
-  while curNode != None:
-    nextNode, curNode.next = curNode.next, prevNode
-    prevNode, curNode = curNode, nextNode
+    currNode = head
+    prevNode = None
     
-  llist = prevNode
-  return llist
+    while currNode != None:
+        nextNode, currNode.next = currNode.next, prevNode
+        prevNode, currNode = currNode, nextNode
+    
+    head = prevNode
+    return head

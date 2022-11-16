@@ -1,16 +1,16 @@
 def reverse(llist):
-  '''
-  Returns a DoublyLinkedListNode: a reference to the head of the reversed list.
-  '''
+    '''
+    Returns a DoublyLinkedListNode: a reference to the head of the reversed list.
+    '''
 
-  if(llist == None):
-    return None
-  elif(llist.next == None):
-    return llist
-    
-  while llist.next != None:
-    llist.next, llist.prev, llist = llist.prev, llist.next, llist.next
-    
-  llist.next, llist.prev = llist.prev, None
+    head = llist
 
-  return llist
+    if(head == None): return None
+    if(head.next == None): return head
+    
+    while head.next != None:
+        head.next, head.prev, head = head.prev, head.next, head.next
+    
+    head.next, head.prev = head.prev, None
+
+    return head
