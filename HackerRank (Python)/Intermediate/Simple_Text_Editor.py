@@ -13,18 +13,17 @@ Q = int(input())
 
 for ops in range(Q):
   op = input().split() 
-  q1, q2 = op[0], op[1]
 
-  if q1 == '1':
+  if op[0] == '1':
     stack.append(S)
-    S += q2
+    S += op[1]
 
-  elif q1 == '2':
+  elif op[0] == '2':
     stack.append(S)    
-    S = S[:-int(q2)]
+    S = S[:-int(op[1])]
 
-  elif q1 == '3':
-    print(S[int(q2)-1])
+  elif op[0] == '3':
+    print(S[int(op[1])-1])
     
-  elif q1 == '4':
+  elif op[0] == '4':
     S = stack.pop()
