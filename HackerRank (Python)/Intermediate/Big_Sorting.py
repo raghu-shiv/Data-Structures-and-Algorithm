@@ -9,4 +9,5 @@ def bigSorting(unsorted):
         return len(x), x
     
     unsorted.sort(key=sortBy)
+    # unsorted.sort(key=lambda x:(len(x), x))
     return unsorted
