@@ -10,7 +10,7 @@ def highestValuePalindrome(s, n, k):
     s = list(s)
     
     # To identify changes at a particular index
-    mark = [0] * n
+    mark = [0]*n
     
     # Change the digits to palindrome
     l = 0   # left index
@@ -32,21 +32,20 @@ def highestValuePalindrome(s, n, k):
         return '-1'
     
     # Maximize the digits
-    l = 0
-    r = n-1
+    l, r = 0, n-1
     
     while l <= r:
-        if l == r and k >= 1:
+        if l==r and k>=1:
             s[l] = '9'
             break
         
-        if s[l] < '9':
+        elif s[l] < '9':
             # if there were no changes before
-            if mark[l] == 0 and mark[r] == 0 and k >= 2:
+            if mark[l]==0 and mark[r]==0 and k>=2:
                 s[l] = s[r] = '9'
                 k -= 2
             # if the string was changed before
-            if (mark[l] == 1 or mark[r] == 1) and k >= 1:
+            elif (mark[l]==1 or mark[r]==1) and k>=1:
                 s[l] = s[r] = '9'
                 k -= 1
         

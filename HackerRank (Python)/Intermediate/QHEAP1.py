@@ -4,7 +4,7 @@ qHeap1 = []
 dataset = set()
 
 Q = int(input())
-for i in range(Q):
+for each_line in range(Q):
     cmd = input().split()
     q = list(map(int, cmd))
     
