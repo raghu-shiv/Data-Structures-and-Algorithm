@@ -6,6 +6,6 @@ def findMedian(arr):
     '''
 
     arr.sort()
-    medianIndex = (len(arr)+1)//2
+    medianIndex = len(arr)//2
 
-    return arr[medianIndex-1]
+    return arr[medianIndex]
