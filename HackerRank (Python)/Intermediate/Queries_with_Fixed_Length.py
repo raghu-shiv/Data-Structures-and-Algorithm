@@ -6,7 +6,7 @@ def solve(arr, queries):
     - int arr[n]: an array of integers.
     - int queries[q]: the lengths of subarrays to query.
     
-    Returns an int[q]: the answers to each query
+    Returns an int[q]: the answers to each query.
     '''
 
     answers = []

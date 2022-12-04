@@ -1,7 +1,6 @@
 def dfs(i, graph, visited):
     queue = [i]
-    item = 0
-    res = 0
+    item = res = 0
     
     while item < len(queue):
         i = queue[item]
