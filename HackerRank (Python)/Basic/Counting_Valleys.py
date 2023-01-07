@@ -11,6 +11,7 @@ def countingValleys(steps, path):
     
     for step in path:
         seaLevel += stepValue[step]
-        if seaLevel == 0 and step == 'U':
+        if seaLevel==0 and step=='U':
             valleys += 1
+
     return valleys

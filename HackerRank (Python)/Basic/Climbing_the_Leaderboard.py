@@ -3,6 +3,7 @@ def climbingLeaderboard(ranked, player):
     climbingLeaderboard has the following parameter(s):
       - int ranked[n]: the leaderboard scores
       - int player[m]: the player's scores
+      
     Returns an int[m]: the player's rank after each new score.
     '''
 

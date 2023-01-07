@@ -5,9 +5,9 @@ def miniMaxSum(arr):
     Print two space-separated integers on one line: the minimum sum and the maximum sum of 4 of 5 elements.
     '''
 
-    arr_sorted = sorted(arr)
+    arr.sort()
         
-    min_sum = sum(arr_sorted[:4])
-    max_sum = sum(arr_sorted[-4:])
+    minSum = sum(arr[:4])
+    maxSum = sum(arr[-4:])
 
-    print(f"{min_sum} {max_sum}")
+    print(f"{minSum} {maxSum}")

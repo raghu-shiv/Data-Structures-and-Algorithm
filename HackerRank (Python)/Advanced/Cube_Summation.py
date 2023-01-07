@@ -24,7 +24,7 @@ def cubeSum(n, operations):
             value = 0
             
             for (x, y, z) in matrix:
-                if x2 >= x >= x1 and y2 >= y >= y1 and z2 >= z >= z1:
+                if x2>=x>=x1 and y2>=y>=y1 and z2>=z>=z1:
                     value += matrix[(x, y, z)]
             
             results.append(value)

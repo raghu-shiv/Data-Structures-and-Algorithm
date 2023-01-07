@@ -6,7 +6,7 @@ def fibonacciModified(t1, t2, n):
       - int n: the iteration to report
     Returns an int: the nth number in the sequence.
     '''
-
+  
     fibSeq = [t1, t2]
     
     for i in range(n):

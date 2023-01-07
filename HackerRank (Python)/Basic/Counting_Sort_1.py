@@ -7,9 +7,10 @@ def countingSort(arr):
     Returns an int[100]: a frequency array.
     '''
 
-    freq_array = [0]*100
-    max_range = max(arr)
+    freqArray = [0 for _ in range(100)]
+    maxRange = max(arr)
     
-    for i in range(max_range+1):
-        freq_array[i] = arr.count(i)
-    return freq_array  
+    for i in range(maxRange+1):
+        freqArray[i] = arr.count(i)
+        
+    return freqArray  

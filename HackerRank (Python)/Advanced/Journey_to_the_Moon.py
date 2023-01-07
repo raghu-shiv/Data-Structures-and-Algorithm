@@ -33,7 +33,7 @@ def journeyToMoon(n, astronaut):
                         a += 1
             group.append(a)
 
-    # choose from group A and other groups (by presum) and sum all possible group A to avaoid repetition, only joins with the groups with index < index_A
+    # choose from group A and other groups (by presum) and sum all possible group A to avoid repetition, only joins with the groups with index < index_A
 
     pairs = 0
     presum = []

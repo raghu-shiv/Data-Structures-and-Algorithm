@@ -5,10 +5,10 @@ def palindromeIndex(s):
     Returns an int: the index of the character to remove or -1.
     '''
 
-    l = len(s)
-
-    if s == s[::-1]: return -1
+    if s == s[::-1]: 
+        return -1
         
+    l = len(s)
     for i in range(l//2):
         if s[i] != s[l-i-1]:
             s1 = s[:i] + s[i+1:]

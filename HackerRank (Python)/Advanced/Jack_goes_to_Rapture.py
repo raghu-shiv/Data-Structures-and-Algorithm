@@ -25,9 +25,9 @@ def getCost(g_nodes, g_from, g_to, g_weight):
         nextStation = set()
         for f in currStation:
             for (t, w) in routes[f]:
-                altRoute = max(fares[f], w)
-                if altRoute < fares[t]:
-                    fares[t] = altRoute
+                altFare = max(fares[f], w)
+                if altFare < fares[t]:
+                    fares[t] = altFare
                     nextStation.add(t)
         currStation = nextStation
     

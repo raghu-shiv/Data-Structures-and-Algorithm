@@ -11,7 +11,7 @@ def prims(n, edges, start):
     '''
     
     # create adjacency matrix
-    graph = [[-1 for i in range(n+1)] for j in range(n+1)]
+    graph = [[-1 for _ in range(n+1)] for _ in range(n+1)]
     
     # assign weights for the edges
     for u, v, w in edges:

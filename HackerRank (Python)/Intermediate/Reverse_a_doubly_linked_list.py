@@ -5,8 +5,8 @@ def reverse(llist):
 
     head = llist
 
-    if(head == None): return None
-    if(head.next == None): return head
+    if head == None: return None
+    if head.next == None: return head
     
     while head.next != None:
         head.next, head.prev, head = head.prev, head.next, head.next

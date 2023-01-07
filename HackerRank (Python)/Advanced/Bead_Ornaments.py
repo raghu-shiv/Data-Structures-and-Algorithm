@@ -13,5 +13,4 @@ def beadOrnaments(b):
     reduced = reduce(mul, map(lambda x: x**(x-1), b), 1)
     sums = sum(b)**(len(b)-2)
     
-    return int(reduced*sums) % mod    
-    
+    return int(reduced*sums) % mod

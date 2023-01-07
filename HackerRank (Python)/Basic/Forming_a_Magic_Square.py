@@ -15,7 +15,7 @@ def formingMagicSquare(s):
     
     for magic in magicMatrices:
         cost = 0
-        for i,j in zip(s,magic):
+        for i, j in zip(s, magic):
             cost += abs(i-j)
         minCost = min(minCost, cost)
     return minCost

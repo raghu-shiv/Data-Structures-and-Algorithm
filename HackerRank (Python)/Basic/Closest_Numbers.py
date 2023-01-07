@@ -2,7 +2,8 @@ def closestNumbers(arr):
     '''
     closestNumbers has the following parameter(s):
       - int arr[n]: an array of integers
-    Returns an int[]: an array of integers as described
+
+    Returns an int[]: an array of integers as described.
     '''
 
     arr.sort()

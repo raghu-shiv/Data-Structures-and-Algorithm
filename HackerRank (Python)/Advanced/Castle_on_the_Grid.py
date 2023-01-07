@@ -26,8 +26,8 @@ def minimumMoves(grid, startX, startY, goalX, goalY):
             while True:
                 x, y = x+xi, y+yi
 
-                if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == '.':
-                    if x == goalX and y == goalY:
+                if 0<=x<len(grid) and 0<=y<len(grid[0]) and grid[x][y]=='.':
+                    if x==goalX and y==goalY:
                         return numOfMoves
                     elif (x, y) not in visited:
                         visited.add((x, y))

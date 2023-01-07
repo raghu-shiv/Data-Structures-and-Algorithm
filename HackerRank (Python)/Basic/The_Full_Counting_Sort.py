@@ -22,4 +22,3 @@ def countSort(arr):
     for string in result:
         if string:
             print(*string, end=' ')
-    

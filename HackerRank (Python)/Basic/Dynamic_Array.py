@@ -12,10 +12,12 @@ def dynamicArray(n, queries):
     
     for query in queries:
         if query[0] == 1:
-            idx = (query[1]^lastAnswer)%n
+            idx = (query[1]^lastAnswer) % n
             arr[idx].append(query[2])
+
         elif query[0] == 2:
-            idx = (query[1]^lastAnswer)%n
-            lastAnswer = arr[idx][query[2]%len(arr[idx])]
+            idx = (query[1]^lastAnswer) % n
+            lastAnswer = arr[idx][query[2] % len(arr[idx])]
             answers.append(lastAnswer)
+            
     return answers

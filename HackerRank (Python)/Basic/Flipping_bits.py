@@ -16,5 +16,5 @@ def flippingBits(n):
         else:
             binary_list[i] = "0"
     
-    binary_list = "".join(binary_list)
-    return int(binary_list, 2)
+    result = "".join(binary_list)
+    return int(result, 2)

@@ -10,7 +10,7 @@ def cutTheTree(data, edges):
     for u, v in edges:
         treeMap[u].add(v)
         treeMap[v].add(u)
-    print(treeMap)
+    # print(treeMap)
 
     nodes = {1}
     depthLevel = 0
@@ -22,10 +22,10 @@ def cutTheTree(data, edges):
             edgeDepth[u] = depthLevel ; newNodes |= treeMap[u]
             for v in treeMap[u]: treeMap[v].remove(u)
         depthLevel += 1 ; nodes = newNodes
-        print(nodes)
+        # print(nodes)
 
     for u in sorted(range(1, n+1), key=lambda x: -edgeDepth[x]):
             data[u-1] += sum(data[v-1] for v in treeMap[u])
-    print(data)
+    # print(data)
     
     return min(abs(data[0] - 2*data[i]) for i in range(1, n))
