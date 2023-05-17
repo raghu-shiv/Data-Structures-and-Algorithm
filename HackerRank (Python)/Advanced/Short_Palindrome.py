@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def shortPalindrome(s):
     '''
     shortPalindrome has the following paramter(s):
@@ -5,22 +7,19 @@ def shortPalindrome(s):
 
     Returns an int: the number of tuples, modulo (10^9 + 7).
     '''
-
+    
     mod = 10**9 + 7
     tuples = 0
-    s = list(s)
-    s1, s3 = [0]*26, [0]*26
-    s2 = [[0]*26 for _ in range(26)]
     
-    while s:
-        i = ord(s.pop()) - 97
-        tuples += s3[i] % mod
-        
-        for j in range(26):
-            s3[j] += s2[j][i]
-            s2[j][i] += s1[j]
-        
-        s1[i] += 1
-        tuples %= mod
+    d1 = defaultdict(int)
+    d2 = defaultdict(lambda: defaultdict(int))
+    d3 = defaultdict(lambda: defaultdict(int))
     
-    return tuples
+    for char in s:
+        tuples += sum(d3[char].values()) % mod
+        for k, d in d2.items():
+            d3[k][char] += d[char]
+        for k, v in d1.items():
+            d2[k][char] += v
+        d1[char] += 1
+    return tuples % mod
