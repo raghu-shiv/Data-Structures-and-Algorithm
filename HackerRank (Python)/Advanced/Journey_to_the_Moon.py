@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**4)
+
 def journeyToMoon(n, astronaut):
     '''
     journeyToMoon has the following parameter(s):
@@ -9,39 +12,30 @@ def journeyToMoon(n, astronaut):
 
     # create adjacency list for graph edges
     graph = [[] for _ in range(n)]
-
     for u, v in astronaut:
         graph[u].append(v)
         graph[v].append(u)
 
-    # BFS to traverse, get the number of each group: group[]
     visited = [False] * n
-    group = []
-
+    # calculate total pairs     
+    pairs = n * (n-1) // 2
+    
+    # main logic
     for i in range(n):
         if visited[i] == False:
-            st = [i]
-            visited[i] = True
-            a = 1
-            while len(st) > 0:
-                start = st.pop()
-                # add all its neighbours
-                for neigh in graph[start]:
-                    if visited[neigh] == False:
-                        visited[neigh] = True
-                        st.append(neigh)
-                        a += 1
-            group.append(a)
+            # no. of astronauts from the same country
+            n_astronauts = getCompatriot(i, graph, visited)
+            # remove possible combinations from the same country
+            pairs -= n_astronauts * (n_astronauts-1) // 2
+    
+    return pairs    
 
-    # choose from group A and other groups (by presum) and sum all possible group A to avoid repetition, only joins with the groups with index < index_A
-
-    pairs = 0
-    presum = []
-    for i in range(len(group)):
-        pairs += group[i]
-        presum.append(pairs)
-
-    pairs = 0
-    for i in reversed(range(1, len(group))):
-        pairs += group[i] * presum[i-1]
-    return pairs
+# create DFS function to find no. of astronauts from the same country (subset)
+def getCompatriot(u, graph, visited):
+    visited[u] = True
+    astronauts = 1  # astronauts = vertices
+    for v in graph[u]:
+        if visited[v] == False:
+            astronauts += getCompatriot(v, graph, visited)
+    return astronauts
+    
