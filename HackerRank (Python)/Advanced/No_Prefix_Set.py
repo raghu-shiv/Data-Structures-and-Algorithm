@@ -6,7 +6,6 @@ def noPrefix(words):
     Prints a string(s): either GOOD SET or BAD SET on one line followed by the word on the next line. No return value is expected.
     '''
 
-def noPrefix(words):
     trie = {}
     for word in words:
         if insert(trie, word):
